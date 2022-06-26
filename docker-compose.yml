@@ -5,12 +5,14 @@ services:
     image: postgres
     volumes:
       - ./data/db:/var/lib/postgresql/data
+    restart: unless-stopped
     environment:
       - POSTGRES_DB=django_postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=efomef62
   web:
     build: .
+    restart: unless-stopped
     command: gunicorn market.wsgi --bind 0.0.0.0:80
     volumes:
       - .:/src
