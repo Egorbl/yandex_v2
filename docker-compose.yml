@@ -11,11 +11,11 @@ services:
       - POSTGRES_PASSWORD=efomef62
   web:
     build: .
-    command: gunicorn market.wsgi --bind 0.0.0.0:80
+    command: gunicorn market.wsgi --bind 0.0.0.0:8000
     volumes:
       - .:/src
     ports:
-      - "80:80"
+      - "8000:80"
     environment:
       - POSTGRES_NAME=django_postgres
       - POSTGRES_USER=postgres
