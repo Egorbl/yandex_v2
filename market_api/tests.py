@@ -4,7 +4,7 @@ from uuid import UUID
 from django.test import TestCase
 import requests
 
-API_BASEURL = "http://0.0.0.0:8000"
+API_BASEURL = "http://0.0.0.0:80"
 
 imports_200 = [
     {
